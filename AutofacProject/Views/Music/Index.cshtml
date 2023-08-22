@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "音乐列表";
+    //Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AutofacProject</title>
+    <link href="~/lib/layui/css/layui.css" rel="stylesheet" />
+</head>
+<body>
+    <table class="layui-table" id="musicTableBody" lay-even="" lay-skin="line">
+       @* <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Genre</th>
+                <th>Release Date</th>
+                <th>Duration</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        *@
+    </table>
+    <script type="text/html" id="actionBar">
+        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">删除</a>
+    </script>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/layui/layui.js"></script>
+    <script>
+        layui.use(['laydate', 'table', 'form', 'upload', 'util'], function () {
+            var table = layui.table,util=layui.util;
+
+            // 渲染表格
+            table.render({
+                elem: '#musicTableBody',
+                url: '/Music/GetAll', // 后端接口获取音乐列表的URL
+                page: true,
+                toolbar: true,
+                cols: [[
+                    { field: 'id', title: 'ID' },
+                    { field: 'title', title: 'Title' },
+                    { field: 'artist', title: 'Artist' },
+                    { field: 'genre', title: 'Genre' },
+                    { field: 'releaseDate', title: 'Release Date', templet: function (d) { return util.toDateString(d.releaseDate, "yyyy-MM-dd HH:mm:ss"); } },
+                    { field: 'duration', title: 'Duration' },
+                    { fixed: 'right', title: 'Actions', toolbar: '#actionBar', width: 150 }
+                ]]
+            });
+
+            // 监听表格工具栏操作
+            table.on('toolbar(musicTable)', function (obj) {
+                if (obj.event === 'add') {
+                    // TODO: 添加音乐的逻辑
+                }
+            });
+
+            //监听行工具事件
+            table.on('tool(musicTable)', function (obj) {
+                var data = obj.data;
+                if (obj.event === 'edit') {
+                    // TODO: 编辑音乐的逻辑
+                } else if (obj.event === 'delete') {
+                    // TODO: 删除音乐的逻辑
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

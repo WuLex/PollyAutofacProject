@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PollyAutofacDemo", "PollyAutofacDemo\PollyAutofacDemo.csproj", "{20BA41DE-5F2A-49AB-96A5-BF22987F8F8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacProject", "AutofacProject\AutofacProject.csproj", "{0199F08B-A56B-428D-8E73-BE30C4E8BBAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{20BA41DE-5F2A-49AB-96A5-BF22987F8F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20BA41DE-5F2A-49AB-96A5-BF22987F8F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20BA41DE-5F2A-49AB-96A5-BF22987F8F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0199F08B-A56B-428D-8E73-BE30C4E8BBAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0199F08B-A56B-428D-8E73-BE30C4E8BBAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0199F08B-A56B-428D-8E73-BE30C4E8BBAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0199F08B-A56B-428D-8E73-BE30C4E8BBAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
